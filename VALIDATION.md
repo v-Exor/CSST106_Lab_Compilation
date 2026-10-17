@@ -1,5 +1,21 @@
 # Validation record
 
+## Publication and connection verification — 17 October 2026
+
+- Repository: https://github.com/v-Exor/CSST106_Lab_Compilation
+- Website: https://v-exor.github.io/CSST106_Lab_Compilation/
+- Production TypeScript check and build passed after configuring all seven live/source destinations.
+- Initial deployment completed successfully: https://github.com/v-Exor/CSST106_Lab_Compilation/actions/runs/39033934120
+- All seven independent live websites and their site-config.js files returned HTTP 200.
+- Each published site-config.js contains the compilation URL as its default return destination. All seven corresponding deployments completed successfully.
+- The published compilation renders seven live launch links and seven separate source-code links with the expected destinations.
+- UI components, styles, laboratory algorithms, existing statuses, and embedding settings were preserved. The unrelated local Lab 4 playwright.config.js modification was not committed.
+- This verifies publication and navigation configuration; it does not re-verify the independent algorithms or iframe compatibility.
+
+The original pre-publication record below is historical; its statements about missing destinations and deployment are superseded by this section.
+
+## Original local verification — 16 October 2026
+
 Verified on 16 October 2026 using Node.js 24.16.0, Vite 7.3.7, and the Codex in-app browser.
 
 ## Passed

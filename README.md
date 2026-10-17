@@ -2,6 +2,26 @@
 
 A single compilation website for **CSST106 — Computer Vision**, connecting seven independently developed laboratory activities. This repository contains the **main portfolio only**, as requested. It does not contain or create the seven independent laboratory applications.
 
+## Published compilation
+
+- **Website:** https://v-exor.github.io/CSST106_Lab_Compilation/
+- **Repository:** https://github.com/v-Exor/CSST106_Lab_Compilation
+- Deployment: pushes to `main` deploy automatically through GitHub Actions.
+
+All seven activities are connected through their existing Launch Laboratory and View Source Code actions. Each independent laboratory also has its published compilation return URL configured.
+
+| Laboratory | Live application | Repository |
+| --- | --- | --- |
+| 1 | [Website](https://v-exor.github.io/LabAct1_CSST106/) | [Source](https://github.com/v-Exor/LabAct1_CSST106) |
+| 2 | [Website](https://v-exor.github.io/LabAct2_CSST106/) | [Source](https://github.com/v-Exor/LabAct2_CSST106) |
+| 3 | [Website](https://v-exor.github.io/LabAct3_CSST106/) | [Source](https://github.com/v-Exor/LabAct3_CSST106) |
+| 4 | [Website](https://v-exor.github.io/LabAct4_CSST106/) | [Source](https://github.com/v-Exor/LabAct4_CSST106) |
+| 5 | [Website](https://v-exor.github.io/LabAct5_CSST106/) | [Source](https://github.com/v-Exor/LabAct5_CSST106) |
+| 6 | [Website](https://v-exor.github.io/LabAct6_CSST106/) | [Source](https://github.com/v-Exor/LabAct6_CSST106) |
+| 7 | [Website](https://v-exor.github.io/LabAct7_CSST106/) | [Source](https://github.com/v-Exor/LabAct7_CSST106) |
+
+Publication changed destination configuration only. The existing UI, content/status labels, and application logic were preserved; embedding remains disabled. The laboratories continue to be hosted independently.
+
 ## Run locally
 
 Use Node.js 24 LTS and npm:
@@ -46,7 +66,7 @@ Edit `src/config/laboratories.ts` for all activity data. Each activity has:
 | `status` | `awaiting-materials`, `awaiting-instructions`, `in-progress`, or `available` |
 | `objectives`, `input`, `output`, `note` | Activity content to reconcile with the original instructions |
 
-For example, fill `liveUrl` with the lab’s real deployed website URL and `sourceUrl` with its real GitHub repository URL. Do not point both fields to the repository. URLs are intentionally blank until supplied; invalid or missing HTTPS destinations do not create clickable external links.
+For example, fill `liveUrl` with the lab’s real deployed website URL and `sourceUrl` with its real GitHub repository URL. Do not point both fields to the repository. All seven live and source URLs are configured. Invalid or missing HTTPS destinations do not create clickable external links.
 
 Set `available` only after verifying the real independent implementation. Link presence and iframe load events do not verify algorithm execution. The portfolio makes no algorithm completion claims.
 
@@ -83,7 +103,7 @@ Topics supplied in the master brief:
 6. YOLOv8 Object Detection
 7. Awaiting topic and instructions
 
-Only broad, supplied topic descriptions are present. The following materials are still needed: original Word instructions, existing implementations, reports/supporting files, verified results/screenshots, real live and repository URLs, and student information. Laboratory 07 remains undefined. No fabricated results, uploaded image processing demonstrations, or simulated detections are included.
+The original compilation descriptions and status labels are retained. The seven independent implementations are now linked above. Updating this portal’s activity descriptions, pending labels, reports, screenshots, or student information is separate from the connection-only publication request. No laboratory outputs are fabricated in this portal.
 
 SURF runtime limitations and YOLOv8 real-inference requirements are documented in the relevant activity pages. The independent applications must explain any differences from their original Python implementations. GitHub Pages cannot run Python or Node.js backends.
 
@@ -105,6 +125,6 @@ Typography uses Google Fonts with local sans-serif fallbacks. Original illustrat
 
 ## Validation and remaining checks
 
-See `VALIDATION.md` for the actual verification performed. External destinations, independent algorithm execution, embedding compatibility, and the hosted GitHub Actions deployment remain unverified until real destinations/materials are supplied and the workflow is run in GitHub.
+See `VALIDATION.md` for verification details. The initial GitHub Pages deployment completed successfully, all seven live sites returned HTTP 200, and the seven published return-link configurations were verified. Independent algorithm execution and iframe compatibility were not retested for this connection-only change.
 
 No license is assigned. Add the appropriate license before distributing source if needed.
