@@ -248,3 +248,12 @@ html { scroll-behavior: smooth; }
   .collection-note p, .collection-note>a { font-size: 10px; }
   .art-orbit { max-width: calc(100vw - 32px); max-height: calc(100vw - 32px); }
 }
+
+/* Shared creator credit: small, readable, and visible on every portfolio route. */
+.creator-ribbon { border-top: 1px solid #f3dfc8; background: linear-gradient(100deg, #fffdf9, #fff1e1, #fffaf3); }
+.creator-credit { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; min-height: 32px; padding-block: 5px; line-height: 1.5; }
+.creator-credit-label { color: #795f49; font-size: 9px; letter-spacing: .3px; }
+.creator-credit strong { color: #98451a; font-size: 11px; font-weight: 650; }
+.creator-credit-section { border: 1px solid #e8c49e; border-radius: 4px; padding: 2px 6px; color: #895023; background: #fffdf9; font-size: 9px; font-weight: 600; }
+@media (max-width: 640px) { .creator-credit { justify-content: center; gap: 6px; min-height: 33px; } .creator-credit strong { font-size: 10.5px; } }
+@media (max-width: 380px) { .creator-credit-label { display: none; } }

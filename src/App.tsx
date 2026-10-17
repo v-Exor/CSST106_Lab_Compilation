@@ -17,6 +17,11 @@ function Brand({ footer = false }: { footer?: boolean }) {
   return <a href="#/" className={`brand ${footer ? 'footer-brand' : ''}`} aria-label="Vision Lab, home"><span className="brand-icon"><ScanEye size={24} strokeWidth={1.8}/></span><span>vision<span className="brand-light">lab</span><span className="brand-period">.</span><small>CSST106 · COMPUTER VISION</small></span></a>
 }
 
+function CreatorCredit() {
+  if (!portfolio.student.name) return null
+  return <div className="creator-ribbon" role="note" aria-label="Portfolio creator"><div className="container creator-credit"><span className="creator-credit-label">Created by</span><strong>{portfolio.student.name}</strong>{portfolio.student.section && <span className="creator-credit-section">{portfolio.student.section}</span>}</div></div>
+}
+
 function Header({ route }: { route: string }) {
   const [open, setOpen] = useState(false)
   useEffect(() => setOpen(false), [route])
@@ -27,7 +32,7 @@ function Header({ route }: { route: string }) {
     <nav className="desktop-nav" aria-label="Main navigation">{links.map(([path, label]) => <a key={path} href={`#${path}`} className={route === path || (path === '/laboratories' && route.startsWith('/lab/')) ? 'active' : ''} aria-current={route === path ? 'page' : undefined}>{label}</a>)}</nav>
     <ExternalAction url={portfolio.githubUrl} className="github-nav" pending="Portfolio repository URL not configured"><Github size={17}/><span>GitHub</span><ArrowUpRight size={15}/></ExternalAction>
     <button className="menu-toggle icon-button" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation">{open ? <X/> : <Menu/>}</button>
-  </div>{open && <nav className="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation">{links.map(([path, label]) => <a key={path} href={`#${path}`} onClick={() => setOpen(false)} aria-current={route === path ? 'page' : undefined}>{label}<ArrowUpRight size={16}/></a>)}</nav>}</header>
+  </div><CreatorCredit/>{open && <nav className="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation">{links.map(([path, label]) => <a key={path} href={`#${path}`} onClick={() => setOpen(false)} aria-current={route === path ? 'page' : undefined}>{label}<ArrowUpRight size={16}/></a>)}</nav>}</header>
 }
 
 function Eyebrow({ children, dot = false }: { children: ReactNode; dot?: boolean }) {
@@ -146,7 +151,7 @@ function LabDetail({ lab }: { lab: Laboratory }) {
 }
 
 function Footer() {
-  return <footer className="site-footer"><div className="container footer-main"><div><Brand footer/><p>Exploring the visual world,<br/>one laboratory at a time.</p></div><div className="footer-nav"><span>THE PORTFOLIO</span><a href="#/laboratories">Laboratories</a><a href="#/about">About the project</a><a href="#/documentation">Documentation</a></div><div className="footer-labs"><span>THE COLLECTION</span><div>{laboratories.map(lab=><a href={`#/lab/${lab.id}`} key={lab.id} aria-label={`Laboratory ${lab.id}: ${lab.title}`}>{lab.id}</a>)}</div><small>Seven experiments. One connected space.</small></div><a className="footer-top" href="#/" aria-label="Go to home"><ArrowUpRight size={21}/></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Vision Lab · {portfolio.course} — {portfolio.courseName}</span><span>Made for learning. Built with curiosity.<span className="tiny-orange-dot"/></span></div></footer>
+  return <footer className="site-footer"><div className="container footer-main"><div><Brand footer/><p>Exploring the visual world,<br/>one laboratory at a time.</p></div><div className="footer-nav"><span>THE PORTFOLIO</span><a href="#/laboratories">Laboratories</a><a href="#/about">About the project</a><a href="#/documentation">Documentation</a></div><div className="footer-labs"><span>THE COLLECTION</span><div>{laboratories.map(lab=><a href={`#/lab/${lab.id}`} key={lab.id} aria-label={`Laboratory ${lab.id}: ${lab.title}`}>{lab.id}</a>)}</div><small>Seven experiments. One connected space.</small></div><a className="footer-top" href="#/" aria-label="Go to home"><ArrowUpRight size={21}/></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} {portfolio.student.name || 'Vision Lab'} · {portfolio.course} — {portfolio.courseName}</span><span>Made for learning. Built with curiosity.<span className="tiny-orange-dot"/></span></div></footer>
 }
 
 export default function App() {

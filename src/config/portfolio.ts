@@ -4,5 +4,5 @@ export const portfolio = {
   course: 'CSST106',
   courseName: 'Computer Vision',
   githubUrl: 'https://github.com/v-Exor/CSST106_Lab_Compilation', // Full https://github.com/username/repository URL.
-  student: { name: '', section: '', instructor: '' },
+  student: { name: 'Keanne Jericho M. Rosario', section: 'BSCS-4B', instructor: '' },
 }
