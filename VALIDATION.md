@@ -1,14 +1,21 @@
 # Validation record
 
+## Repository-link cleanup — 17 October 2026
+
+- Removed the seven repository links and the repository column from the README.
+- Removed unused repository destinations from activity and portfolio configuration.
+- Removed repository URLs from this validation record and updated the setup instructions.
+- Kept all seven published activity website destinations and the creator credit.
+- The compilation has no tracked laboratory Python files or source archives, and its public asset directory contains only the favicon.
+- Public repositories and previous commits remain accessible through GitHub. Removing project-authored links does not restrict GitHub's built-in source browsing or archive downloads.
+
 ## Publication and connection verification — 17 October 2026
 
-- Repository: https://github.com/v-Exor/CSST106_Lab_Compilation
 - Website: https://v-exor.github.io/CSST106_Lab_Compilation/
-- Production TypeScript check and build passed after configuring all seven live/source destinations.
-- Initial deployment completed successfully: https://github.com/v-Exor/CSST106_Lab_Compilation/actions/runs/39033934120
+- Production TypeScript check and build passed after configuring all seven live destinations.
 - All seven independent live websites and their site-config.js files returned HTTP 200.
 - Each published site-config.js contains the compilation URL as its default return destination. All seven corresponding deployments completed successfully.
-- The published compilation renders seven live launch links and seven separate source-code links with the expected destinations.
+- The initial publication rendered seven live launch links. Repository shortcuts from that initial version have since been removed.
 - UI components, styles, laboratory algorithms, existing statuses, and embedding settings were preserved. The unrelated local Lab 4 playwright.config.js modification was not committed.
 - This verifies publication and navigation configuration; it does not re-verify the independent algorithms or iframe compatibility.
 

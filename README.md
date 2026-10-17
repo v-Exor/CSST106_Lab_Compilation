@@ -5,20 +5,19 @@ A single compilation website for **CSST106 — Computer Vision**, connecting sev
 ## Published compilation
 
 - **Website:** https://v-exor.github.io/CSST106_Lab_Compilation/
-- **Repository:** https://github.com/v-Exor/CSST106_Lab_Compilation
 - Deployment: pushes to `main` deploy automatically through GitHub Actions.
 
-All seven activities are connected through their existing Launch Laboratory and View Source Code actions. Each independent laboratory also has its published compilation return URL configured.
+All seven activities are connected through their Launch Laboratory actions. Each independent laboratory also has its published compilation return URL configured.
 
-| Laboratory | Live application | Repository |
-| --- | --- | --- |
-| 1 | [Website](https://v-exor.github.io/amber/) | [Source](https://github.com/v-Exor/amber) |
-| 2 | [Website](https://v-exor.github.io/birch/) | [Source](https://github.com/v-Exor/birch) |
-| 3 | [Website](https://v-exor.github.io/cedar/) | [Source](https://github.com/v-Exor/cedar) |
-| 4 | [Website](https://v-exor.github.io/drift/) | [Source](https://github.com/v-Exor/drift) |
-| 5 | [Website](https://v-exor.github.io/ember/) | [Source](https://github.com/v-Exor/ember) |
-| 6 | [Website](https://v-exor.github.io/flint/) | [Source](https://github.com/v-Exor/flint) |
-| 7 | [Website](https://v-exor.github.io/grove/) | [Source](https://github.com/v-Exor/grove) |
+| Laboratory | Live application |
+| --- | --- |
+| 1 | [Website](https://v-exor.github.io/amber/) |
+| 2 | [Website](https://v-exor.github.io/birch/) |
+| 3 | [Website](https://v-exor.github.io/cedar/) |
+| 4 | [Website](https://v-exor.github.io/drift/) |
+| 5 | [Website](https://v-exor.github.io/ember/) |
+| 6 | [Website](https://v-exor.github.io/flint/) |
+| 7 | [Website](https://v-exor.github.io/grove/) |
 
 Publication changed destination configuration only. The existing UI, content/status labels, and application logic were preserved; embedding remains disabled. The laboratories continue to be hosted independently.
 
@@ -46,27 +45,26 @@ npm run preview
 - Searchable activity collection with topic filters and working grid/list controls.
 - Seven central detail pages with overview, workspace, and resource tabs; previous/next navigation; expected inputs/outputs; and honest material statuses.
 - Integrated workspace that can load a configured, embedding-compatible independent lab on demand, plus an external launch alternative.
-- Separate live-application and source-code destinations for every activity.
+- Live-application destinations for every activity.
 - About page with editable student metadata and a documentation guide with expandable sections and an activity index.
 - Sticky navigation, mobile menu, keyboard-accessible tabs, focus management, skip link, reduced-motion support, subtle hover/route/scroll animations, and static-host-compatible routing.
 - GitHub Pages workflow with reproducible npm installs and typechecking.
 
 ## Edit identity and destinations
 
-Edit `src/config/portfolio.ts` for the student name, section, instructor, and main repository URL. Empty personal fields show “Not yet provided.” No personal information is invented.
+Edit `src/config/portfolio.ts` for the student name, section, and instructor. Empty personal fields show “Not yet provided.” No personal information is invented.
 
 Edit `src/config/laboratories.ts` for all activity data. Each activity has:
 
 | Field | Purpose |
 | --- | --- |
 | `liveUrl` | HTTPS URL of the deployed independent lab website |
-| `sourceUrl` | HTTPS URL of that lab’s source repository |
 | `embed` | `true` only after verifying that the independent app permits and supports iframe embedding |
 | `reportUrl` | HTTPS document URL, or a relative `reports/filename.pdf` path for an existing file in `public/reports/` |
 | `status` | `awaiting-materials`, `awaiting-instructions`, `in-progress`, or `available` |
 | `objectives`, `input`, `output`, `note` | Activity content to reconcile with the original instructions |
 
-For example, fill `liveUrl` with the lab’s real deployed website URL and `sourceUrl` with its real GitHub repository URL. Do not point both fields to the repository. All seven live and source URLs are configured. Invalid or missing HTTPS destinations do not create clickable external links.
+Fill `liveUrl` with the activity’s deployed website URL. All seven live URLs are configured. Invalid or missing HTTPS destinations do not create clickable external links.
 
 Set `available` only after verifying the real independent implementation. Link presence and iframe load events do not verify algorithm execution. The portfolio makes no algorithm completion claims.
 
@@ -77,11 +75,11 @@ For a local report, copy the actual supplied document to `public/reports/activit
 1. Put this project in the **main compilation repository** and push to its `main` branch. If the default branch has another name, update `.github/workflows/deploy.yml`.
 2. Open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 3. The included workflow runs `npm ci`, typechecks/builds, uploads `dist`, and deploys it. Follow the deployment URL returned in the Actions run.
-4. Update the main repository URL in the portfolio configuration and push subsequent changes to update the site.
+4. Push subsequent changes to update the site.
 
 `vite.config.ts` uses `base: './'`, and navigation uses hash routes such as `#/lab/04`. Assets and refreshes therefore work under a repository subpath without server rewrite rules. Open the repository root with a trailing slash. For a custom domain, set up the domain in GitHub Pages and add the appropriate `public/CNAME` only when a real domain is provided.
 
-The independent laboratories are deployed from their own repositories, managed separately. Paste their resulting live and source URLs into this portal. There is **one portfolio deployment workflow** here; no workflows or repositories for the independent laboratories are generated in this task.
+The independent laboratories are deployed from their own repositories, managed separately. Paste their resulting live website URLs into this portal. There is **one portfolio deployment workflow** here; no workflows or repositories for the independent laboratories are generated in this task.
 
 References: [Vite deployment guidance](https://vite.dev/guide/static-deploy.html), [Tailwind with Vite](https://tailwindcss.com/docs/installation/using-vite).
 
@@ -112,7 +110,7 @@ SURF runtime limitations and YOLOv8 real-inference requirements are documented i
 ```text
 .github/workflows/deploy.yml   Main portfolio deployment
 public/favicon.svg            Local vector favicon
-src/config/portfolio.ts       Identity and main repository URL
+src/config/portfolio.ts       Identity and academic information
 src/config/laboratories.ts    Seven lab definitions and all external links
 src/components/Artwork.tsx    Original decorative SVG illustrations
 src/App.tsx                   Shared UI, routes, collection, pages, workspace
