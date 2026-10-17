@@ -12,13 +12,13 @@ All seven activities are connected through their existing Launch Laboratory and 
 
 | Laboratory | Live application | Repository |
 | --- | --- | --- |
-| 1 | [Website](https://v-exor.github.io/LabAct1_CSST106/) | [Source](https://github.com/v-Exor/LabAct1_CSST106) |
-| 2 | [Website](https://v-exor.github.io/LabAct2_CSST106/) | [Source](https://github.com/v-Exor/LabAct2_CSST106) |
-| 3 | [Website](https://v-exor.github.io/LabAct3_CSST106/) | [Source](https://github.com/v-Exor/LabAct3_CSST106) |
-| 4 | [Website](https://v-exor.github.io/LabAct4_CSST106/) | [Source](https://github.com/v-Exor/LabAct4_CSST106) |
-| 5 | [Website](https://v-exor.github.io/LabAct5_CSST106/) | [Source](https://github.com/v-Exor/LabAct5_CSST106) |
-| 6 | [Website](https://v-exor.github.io/LabAct6_CSST106/) | [Source](https://github.com/v-Exor/LabAct6_CSST106) |
-| 7 | [Website](https://v-exor.github.io/LabAct7_CSST106/) | [Source](https://github.com/v-Exor/LabAct7_CSST106) |
+| 1 | [Website](https://v-exor.github.io/amber/) | [Source](https://github.com/v-Exor/amber) |
+| 2 | [Website](https://v-exor.github.io/birch/) | [Source](https://github.com/v-Exor/birch) |
+| 3 | [Website](https://v-exor.github.io/cedar/) | [Source](https://github.com/v-Exor/cedar) |
+| 4 | [Website](https://v-exor.github.io/drift/) | [Source](https://github.com/v-Exor/drift) |
+| 5 | [Website](https://v-exor.github.io/ember/) | [Source](https://github.com/v-Exor/ember) |
+| 6 | [Website](https://v-exor.github.io/flint/) | [Source](https://github.com/v-Exor/flint) |
+| 7 | [Website](https://v-exor.github.io/grove/) | [Source](https://github.com/v-Exor/grove) |
 
 Publication changed destination configuration only. The existing UI, content/status labels, and application logic were preserved; embedding remains disabled. The laboratories continue to be hosted independently.
 
