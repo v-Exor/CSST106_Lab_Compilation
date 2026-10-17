@@ -1,0 +1,40 @@
+# Validation record
+
+Verified on 16 October 2026 using Node.js 24.16.0, Vite 7.3.7, and the Codex in-app browser.
+
+## Passed
+
+- Final `npm run build`: strict TypeScript checking and production bundling succeeded.
+- Content smoke check: exactly seven unique activity IDs; all current lab destinations empty; no unverified activity marked available; Laboratory 07 awaits instructions.
+- URL validation smoke check: JavaScript URLs and credential-bearing URLs rejected; a normal HTTPS destination accepted.
+- Home → Laboratories navigation displays all seven cards.
+- Machine learning filter returns two activities. Searching for YOLO within that filter returns one.
+- A non-matching search displays the empty state. Reset filters restores all seven activities.
+- Grid/list buttons update the selected layout.
+- All seven laboratory detail destinations render their correct heading.
+- Workspace displays the unconfigured state with a disabled live-link action.
+- Arrow-key navigation from Workspace selects Resources and displays its panel.
+- Next-laboratory navigation from Images opens Edge Detection. Reload preserves the detail page.
+- Documentation loads; its source/link section expands.
+- About loads and displays the unsupplied student-information placeholders.
+- Mobile menu opens and closes after selecting a destination.
+- Desktop layout renders three card columns; 768px tablet layout renders two.
+- 390px mobile home, collection, detail, and workspace render successfully.
+- At 320px, home, collection, list view, and **all seven detail pages** have no horizontal page overflow. An initial decorative-orbit/footer overflow was fixed and rechecked.
+- Production build loaded under `/portfolio/`, including its styles and assets. A refresh at `/portfolio/#/lab/06` retained the YOLOv8 detail page.
+- Unknown route displays a recovery page. Explore Laboratories recovers to all seven activities.
+- Browser console inspection returned no warnings or errors during the checked development and production sessions.
+
+Final build output: approximately **273.81 kB JavaScript / 84.57 kB gzip** and **45.95 kB CSS / 11.06 kB gzip**. Google Fonts are separate external stylesheet/font requests and have system-font fallbacks.
+
+Local screenshots are saved in the ignored `artifacts/` folder: `portfolio-preview.jpg`, `portfolio-desktop.jpg`, and `portfolio-mobile.jpg`.
+
+## Pending external verification
+
+- Real deployed lab and repository URLs: none provided.
+- Any independent laboratory’s algorithm execution, iframe compatibility, inference outputs, or download behavior: outside this compilation website’s scope and not verified.
+- Laboratory-specific procedures, results, reports, and screenshots: original instructions and implementations have not been supplied.
+- Actual GitHub Actions deployment: workflow prepared, but this workspace has no Git remote and no deployment was performed.
+- Reduced-motion styles, focus indicators, semantics, and tab behavior are implemented; no comprehensive accessibility audit or screen-reader certification was performed.
+
+The local preview initially could not be reached because of sandbox socket restrictions. Running the preview outside those restrictions on a fresh port resolved this, allowing the browser checks above. The skill’s dependency helper also failed to locate npm on Windows; running `npm.cmd install` directly succeeded. `package-lock.json` records the installed dependencies.
