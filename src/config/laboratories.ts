@@ -87,7 +87,7 @@ export const laboratories: Laboratory[] = [
     note: 'The independent lab must perform real inference before being marked available. GitHub Pages cannot run a Python server. No model or verified detections have been supplied.',
   },
   {
-    id: '07', title: 'The Next Exploration', subtitle: 'A new perspective is on its way.', icon: 'upcoming',
+    id: '07', title: 'Segmentation Technique', subtitle: 'A new perspective is on its way.', icon: 'upcoming',
     description: 'A place for the next laboratory activity. Its topic will be added when instructions are available.',
     category: 'Upcoming', tags: ['Topic to be defined'], status: 'awaiting-instructions',
     liveUrl: 'https://v-exor.github.io/LabAct7_CSST106/', sourceUrl: 'https://github.com/v-Exor/LabAct7_CSST106', reportUrl: '', embed: false,
