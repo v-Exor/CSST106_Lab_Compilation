@@ -1,5 +1,15 @@
 # Validation record
 
+## Instructor and Word resources — 19 October 2026
+
+- Instructor: Sir Jeremy Reyes.
+- Matched original handouts 01–07 by filename and topic and copied them without changes into public/reports.
+- All seven activities now link to their matching DOCX in Resources; objectives and procedures follow the supplied handouts.
+- Labels distinguish available instructions from verified implementation completion.
+- Lab 6 uses YOLOv11 as specified inside its handout; Lab 7 now has segmentation objectives and metadata.
+- Implementation repository shortcuts and source-download controls remain removed.
+- The original DOCX documents are preserved byte for byte; layout was not changed. A document render check was unavailable because the bundled environment has no LibreOffice renderer.
+
 ## Repository-link cleanup — 17 October 2026
 
 - Removed the seven repository links and the repository column from the README.

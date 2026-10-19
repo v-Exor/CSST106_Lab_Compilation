@@ -7,19 +7,19 @@ A single compilation website for **CSST106 — Computer Vision**, connecting sev
 - **Website:** https://v-exor.github.io/CSST106_Lab_Compilation/
 - Deployment: pushes to `main` deploy automatically through GitHub Actions.
 
-All seven activities are connected through their Launch Laboratory actions. Each independent laboratory also has its published compilation return URL configured.
+All seven activities are connected through their Launch Laboratory actions and have their original Word instructions in Resources. Each independent laboratory also has its published compilation return URL configured.
 
-| Laboratory | Live application |
-| --- | --- |
-| 1 | [Website](https://v-exor.github.io/amber/) |
-| 2 | [Website](https://v-exor.github.io/birch/) |
-| 3 | [Website](https://v-exor.github.io/cedar/) |
-| 4 | [Website](https://v-exor.github.io/drift/) |
-| 5 | [Website](https://v-exor.github.io/ember/) |
-| 6 | [Website](https://v-exor.github.io/flint/) |
-| 7 | [Website](https://v-exor.github.io/grove/) |
+| Laboratory | Live application | Instructions |
+| --- | --- | --- |
+| 1 | [Website](https://v-exor.github.io/amber/) | [Word handout](public/reports/activity-01-instructions.docx) |
+| 2 | [Website](https://v-exor.github.io/birch/) | [Word handout](public/reports/activity-02-instructions.docx) |
+| 3 | [Website](https://v-exor.github.io/cedar/) | [Word handout](public/reports/activity-03-instructions.docx) |
+| 4 | [Website](https://v-exor.github.io/drift/) | [Word handout](public/reports/activity-04-instructions.docx) |
+| 5 | [Website](https://v-exor.github.io/ember/) | [Word handout](public/reports/activity-05-instructions.docx) |
+| 6 | [Website](https://v-exor.github.io/flint/) | [Word handout](public/reports/activity-06-instructions.docx) |
+| 7 | [Website](https://v-exor.github.io/grove/) | [Word handout](public/reports/activity-07-instructions.docx) |
 
-Publication changed destination configuration only. The existing UI, content/status labels, and application logic were preserved; embedding remains disabled. The laboratories continue to be hosted independently.
+The compilation connects the independent applications and their supplied Word instructions. Embedding remains disabled, and the laboratories continue to be hosted independently.
 
 ## Run locally
 
@@ -60,9 +60,9 @@ Edit `src/config/laboratories.ts` for all activity data. Each activity has:
 | --- | --- |
 | `liveUrl` | HTTPS URL of the deployed independent lab website |
 | `embed` | `true` only after verifying that the independent app permits and supports iframe embedding |
-| `reportUrl` | HTTPS document URL, or a relative `reports/filename.pdf` path for an existing file in `public/reports/` |
-| `status` | `awaiting-materials`, `awaiting-instructions`, `in-progress`, or `available` |
-| `objectives`, `input`, `output`, `note` | Activity content to reconcile with the original instructions |
+| `reportUrl` | HTTPS document URL, or a relative `reports/filename.docx` or PDF path for a file in `public/reports/` |
+| `status` | `instructions-ready`, `awaiting-materials`, `awaiting-instructions`, `in-progress`, or `available` |
+| `objectives`, `input`, `output`, `note`, `procedure` | Activity content based on the supplied instructions |
 
 Fill `liveUrl` with the activity’s deployed website URL. All seven live URLs are configured. Invalid or missing HTTPS destinations do not create clickable external links.
 
@@ -98,10 +98,10 @@ Topics supplied in the master brief:
 3. Histogram Analysis
 4. SURF Feature Detection
 5. PCA in Computer Vision
-6. YOLOv8 Object Detection
-7. Awaiting topic and instructions
+6. YOLOv11 Object Detection
+7. Segmentation Technique
 
-The original compilation descriptions and status labels are retained. The seven independent implementations are now linked above. Updating this portal’s activity descriptions, pending labels, reports, screenshots, or student information is separate from the connection-only publication request. No laboratory outputs are fabricated in this portal.
+Activity objectives, procedures, inputs, and outputs summarize the supplied handouts. Every activity is labeled Instructions available; this confirms the handout is connected without asserting algorithm completion. Experiment outputs and recorded evidence remain on the independent activity websites. No laboratory outputs are fabricated in this portal.
 
 SURF runtime limitations and YOLOv8 real-inference requirements are documented in the relevant activity pages. The independent applications must explain any differences from their original Python implementations. GitHub Pages cannot run Python or Node.js backends.
 
@@ -110,6 +110,7 @@ SURF runtime limitations and YOLOv8 real-inference requirements are documented i
 ```text
 .github/workflows/deploy.yml   Main portfolio deployment
 public/favicon.svg            Local vector favicon
+public/reports/               Seven unchanged original Word handouts
 src/config/portfolio.ts       Identity and academic information
 src/config/laboratories.ts    Seven lab definitions and all external links
 src/components/Artwork.tsx    Original decorative SVG illustrations
